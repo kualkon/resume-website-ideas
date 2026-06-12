@@ -8,16 +8,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: 173.212.230.119
-          username: root
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd /var/www/resume
-            git pull origin main
-            rm -rf node_modules package-lock.json
-            npm install
-            npm run build
-            pm2 restart resume
+      - name: Trigger deploy webhook
+        run: |
+          curl -s -X POST "http://173.212.230.119:9000/deploy?token=deploy-kualkon-2026"
