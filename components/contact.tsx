@@ -11,7 +11,7 @@ export function Contact() {
             Готовы к интеграции?
           </p>
           <h2 className="mt-3 text-balance text-2xl font-bold tracking-tight">
-            Подключите {profile.name.split(" ")[0]} к вашей команде
+            Пригласите {profile.name.split(" ")[0]} в вашу команду
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             Деплой возможен уже в этом спринте. Поддержка человеческим языком включена.
