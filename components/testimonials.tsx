@@ -6,7 +6,7 @@ export function Testimonials() {
   return (
     <section className="px-5 py-14">
       <div className="mx-auto max-w-md">
-        <SectionHeader kicker="Отзывы" title="Что говорят те, кто видел код" />
+        <SectionHeader kicker="Отзывы" title="Что говорят те, кто работал рядом" />
 
         <div className="mt-8 grid gap-4">
           {testimonials.map((t) => (
