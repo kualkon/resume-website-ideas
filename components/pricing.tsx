@@ -1,5 +1,83 @@
+"use client"
+
 import { SectionHeader } from "@/components/features"
-import { Zap, Clock } from "lucide-react"
+import { Zap, Clock, TrendingUp } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+
+function SalaryTicker() {
+  const [count, setCount] = useState(0)
+  const [blink, setBlink] = useState(true)
+  const ref = useRef<HTMLDivElement>(null)
+  const animated = useRef(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !animated.current) {
+        animated.current = true
+        const target = 2500
+        const duration = 1800
+        const start = Date.now()
+        const tick = () => {
+          const elapsed = Date.now() - start
+          const progress = Math.min(elapsed / duration, 1)
+          const eased = 1 - Math.pow(1 - progress, 3)
+          setCount(Math.floor(eased * target))
+          if (progress < 1) requestAnimationFrame(tick)
+        }
+        requestAnimationFrame(tick)
+      }
+    })
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const t = setInterval(() => setBlink(b => !b), 600)
+    return () => clearInterval(t)
+  }, [])
+
+  return (
+    <div ref={ref} className="rounded-2xl border border-border bg-card p-5">
+      <div className="flex items-center justify-between mb-3">
+        <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">KUZN · SALARY</p>
+        <div className="flex items-center gap-1.5 rounded-full bg-green-500/15 px-2.5 py-1">
+          <TrendingUp className="size-3 text-green-400" />
+          <span className="font-mono text-xs text-green-400">+20 YRS</span>
+        </div>
+      </div>
+
+      <div className="flex items-baseline gap-2">
+        <span className="font-mono text-4xl font-bold text-green-400 tabular-nums">
+          {count.toLocaleString("de-DE")}
+        </span>
+        <span className="font-mono text-xl font-bold text-green-400">€</span>
+        <span className={`font-mono text-2xl font-bold text-green-400 transition-opacity ${blink ? "opacity-100" : "opacity-0"}`}>▌</span>
+      </div>
+
+      <div className="mt-1 flex items-center gap-2">
+        <span className="font-mono text-xs text-muted-foreground">/ месяц брутто · от</span>
+        <span className="font-mono text-xs text-green-400/70">↑ открыт к переговорам</span>
+      </div>
+
+      <div className="mt-4 grid grid-cols-3 gap-2 border-t border-border pt-4">
+        {[
+          { label: "ФОРМАТ", value: "Full-time" },
+          { label: "РЕЖИМ", value: "Hybrid OK" },
+          { label: "СТАТУС", value: "OPEN" },
+        ].map(({ label, value }) => (
+          <div key={label} className="text-center">
+            <p className="font-mono text-[10px] text-muted-foreground/60">{label}</p>
+            <p className={`font-mono text-xs font-semibold ${value === "OPEN" ? "text-green-400" : "text-foreground"}`}>{value}</p>
+          </div>
+        ))}
+      </div>
+
+      <p className="mt-3 text-xs text-muted-foreground">
+        Полная занятость. Готов к переговорам — главное, чтобы задачи были интересными.
+      </p>
+    </div>
+  )
+}
 
 export function Pricing() {
   return (
@@ -11,17 +89,7 @@ export function Pricing() {
         />
 
         <div className="mt-8 grid gap-4">
-          {/* Зарплатные ожидания */}
-          <div className="rounded-2xl border border-border bg-card p-5">
-            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Базовая конфигурация</p>
-            <div className="mt-3 flex items-baseline gap-2">
-              <span className="font-mono text-3xl font-bold text-primary">от 2 500 €</span>
-              <span className="text-sm text-muted-foreground">/ месяц брутто</span>
-            </div>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Полная занятость. Возможен удалённый или гибридный формат. Готов к переговорам — главное, чтобы задачи были интересными.
-            </p>
-          </div>
+          <SalaryTicker />
 
           {/* Шуточный блок срочности */}
           <div className="rounded-2xl border border-primary bg-card ring-1 ring-primary overflow-hidden">
