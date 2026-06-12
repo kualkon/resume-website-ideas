@@ -73,7 +73,7 @@ export function Contact() {
             Данный сайт — стилизованное резюме. Готов к стандартному найму, трудовому договору и всем обычным HR-процедурам.
           </p>
           <p className="mt-2 text-[11px] text-muted-foreground/35 leading-relaxed">
-            📍 Ищу штатную позицию в Германии | IT Support · System Administration · Network Engineering · Technical Support | Nürnberg/Bayern | Full-time | Разрешение на работу есть
+            📍 Ищу полную занятость | IT Support · System Administration · Network Engineering · Technical Support | Nürnberg/Bayern | Full-time | Разрешение на работу есть
           </p>
         </footer>
       </div>
