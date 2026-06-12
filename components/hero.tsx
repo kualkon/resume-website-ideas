@@ -87,7 +87,7 @@ export function Hero() {
           href="#features"
           className="mt-12 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
-          Смотреть возможности
+          Навыки и опыт
           <ArrowDown className="size-3.5 animate-bounce" />
         </a>
       </div>
