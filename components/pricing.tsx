@@ -1,7 +1,5 @@
-import { tiers } from "@/lib/resume-data"
 import { SectionHeader } from "@/components/features"
-import { Check } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { Zap, Clock } from "lucide-react"
 
 export function Pricing() {
   return (
@@ -9,62 +7,47 @@ export function Pricing() {
       <div className="mx-auto max-w-md">
         <SectionHeader
           kicker="Тарифы"
-          title="Выберите свой уровень (но он уже выбран)"
+          title="Сколько стоит этот продукт"
         />
 
-
         <div className="mt-8 grid gap-4">
-          {tiers.map((tier) => (
-            <div
-              key={tier.name}
-              className={cn(
-                "relative rounded-2xl border p-5 transition-colors",
-                tier.highlighted
-                  ? "border-primary bg-card ring-1 ring-primary"
-                  : "border-border bg-card opacity-70",
-              )}
-            >
-              {tier.badge && (
-                <span className="absolute -top-3 left-5 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
-                  {tier.badge}
-                </span>
-              )}
-              <div className="flex items-baseline justify-between">
-                <h3 className="text-lg font-bold">{tier.name}</h3>
-                <div className="text-right">
-                  <span className="font-mono text-sm text-muted-foreground">
-                    {tier.price}
-                  </span>{" "}
-                  <span className="font-mono text-sm font-semibold text-primary">
-                    {tier.period}
-                  </span>
-                </div>
-              </div>
-              <p className="mt-1.5 text-sm text-muted-foreground">
-                {tier.description}
-              </p>
-              <ul className="mt-4 grid gap-2">
-                {tier.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm">
-                    <Check
-                      className={cn(
-                        "mt-0.5 size-4 shrink-0",
-                        tier.highlighted
-                          ? "text-primary"
-                          : "text-muted-foreground",
-                      )}
-                    />
-                    <span className="text-foreground/90">{f}</span>
-                  </li>
-                ))}
-              </ul>
+          {/* Зарплатные ожидания */}
+          <div className="rounded-2xl border border-border bg-card p-5">
+            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Базовая конфигурация</p>
+            <div className="mt-3 flex items-baseline gap-2">
+              <span className="font-mono text-3xl font-bold text-primary">от 2 500 €</span>
+              <span className="text-sm text-muted-foreground">/ месяц брутто</span>
             </div>
-          ))}
-        </div>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Полная занятость. Возможен удалённый или гибридный формат. Готов к переговорам — главное, чтобы задачи были интересными.
+            </p>
+          </div>
 
-        <p className="mt-5 text-center text-xs text-muted-foreground">
-          План «Enterprise» — звоните, договоримся.
-        </p>
+          {/* Шуточный блок срочности */}
+          <div className="relative rounded-2xl border border-primary bg-card p-5 ring-1 ring-primary overflow-hidden">
+            <span className="absolute -top-3 left-5 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+              🔥 Ограниченное предложение
+            </span>
+            <div className="mt-2 flex items-start gap-3">
+              <Zap className="mt-0.5 size-5 shrink-0 text-primary" />
+              <div>
+                <h3 className="font-semibold">Будьте первыми</h3>
+                <p className="mt-1.5 text-sm text-muted-foreground">
+                  Экземпляр в единственном числе. Очередь уже формируется. Ранние партнёры получают повышенный приоритет в поддержке и лучший кофе на онбординге.*
+                </p>
+              </div>
+            </div>
+            <div className="mt-4 flex items-center gap-2 rounded-xl bg-primary/10 px-4 py-2.5">
+              <Clock className="size-4 shrink-0 text-primary" />
+              <p className="font-mono text-xs text-primary">
+                Доступность: ограничена · Статус: открыт к офферам
+              </p>
+            </div>
+            <p className="mt-3 text-xs text-muted-foreground/60">
+              * кофе за свой счёт
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   )
