@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Oleksandr Kuznietsov — IT-специалист v20.0',
   description:
-    'IT-специалист выездного обслуживания и системный инженер. 20 лет опыта, сертифицирован MikroTik, открыт к предложениям.',
+    'IT-специалист выездного обслуживания и системный инженер. 20 лет опыта, сертифицирован MikroTik, открыт к предложениям. Ищу штатную позицию Field IT Engineer | Nürnberg/Bayern | Full-time | Разрешение на работу есть.',
   generator: 'v0.app',
   icons: {
     icon: [
