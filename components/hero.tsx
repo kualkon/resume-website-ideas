@@ -47,6 +47,10 @@ export function Hero() {
           {profile.subtitle}
         </p>
 
+        <p className="mt-4 font-mono text-sm text-primary/80 italic">
+          // Я обновляюсь чаще, чем Windows
+        </p>
+
         <div className="mt-8 flex flex-col gap-3">
           <a
             href={profile.resumePdf}

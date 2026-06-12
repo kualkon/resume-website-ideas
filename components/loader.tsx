@@ -3,14 +3,14 @@
 import { useEffect, useState } from "react"
 
 const lines = [
-  { text: "$ git clone kuznietsov.dev", color: "text-muted-foreground", delay: 300 },
-  { text: "Cloning... ████████████ 100%", color: "text-primary", delay: 1000 },
-  { text: "$ npm install specialist", color: "text-muted-foreground", delay: 1700 },
-  { text: "✓ 20 years experience loaded", color: "text-green-400", delay: 2400 },
-  { text: "✓ certifications verified", color: "text-green-400", delay: 2900 },
-  { text: "✓ field service ready", color: "text-green-400", delay: 3300 },
-  { text: "$ ./deploy --to=your-team", color: "text-muted-foreground", delay: 3800 },
-  { text: "🚀 Ready to ship!", color: "text-primary font-bold", delay: 4500 },
+  { text: "⚠  КРИТИЧЕСКАЯ ОШИБКА: специалист не найден", color: "text-red-500 font-bold", delay: 200 },
+  { text: "✗  резюме устарело... удаление...", color: "text-red-400", delay: 900 },
+  { text: "— just kidding. Загружаю настоящего —", color: "text-muted-foreground italic", delay: 1600 },
+  { text: "$ git clone kuznietsov.dev", color: "text-muted-foreground", delay: 2200 },
+  { text: "Cloning... ████████████ 100%", color: "text-primary", delay: 2900 },
+  { text: "✓ 20 years experience loaded", color: "text-green-400", delay: 3500 },
+  { text: "✓ field service ready", color: "text-green-400", delay: 4000 },
+  { text: "🚀 Ready to ship!", color: "text-primary font-bold", delay: 4600 },
 ]
 
 export function Loader({ onDone }: { onDone: () => void }) {
