@@ -21,7 +21,7 @@ export default function Page() {
         }`}
       >
         <div className="bg-primary py-2 text-center text-sm font-medium text-primary-foreground">
-          Ищу штатную работу
+          Ищу работу в Германии · IT Support · System Administration · Network Engineering · Technical Support
         </div>
         <Hero />
         <Features />
