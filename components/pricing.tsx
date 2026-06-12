@@ -6,8 +6,8 @@ export function Pricing() {
     <section id="pricing" className="px-5 py-14">
       <div className="mx-auto max-w-md">
         <SectionHeader
-          kicker="Тарифы"
-          title="Сколько стоит этот продукт"
+          kicker="Условия"
+          title="Зарплатные ожидания"
         />
 
         <div className="mt-8 grid gap-4">
