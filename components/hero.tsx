@@ -66,6 +66,25 @@ export function Hero() {
           <Stat value={profile.uptime} label="мой аптайм" />
         </div>
 
+        {/* Animated terminal */}
+        <div className="mt-10 mx-auto max-w-xs rounded-xl border border-border bg-card/80 text-left font-mono text-xs overflow-hidden shadow-lg">
+          <div className="flex items-center gap-1.5 border-b border-border px-3 py-2">
+            <span className="size-2.5 rounded-full bg-red-500/70" />
+            <span className="size-2.5 rounded-full bg-yellow-500/70" />
+            <span className="size-2.5 rounded-full bg-green-500/70" />
+            <span className="ml-2 text-muted-foreground/50 text-[10px]">kuznietsov@server ~</span>
+          </div>
+          <div className="px-3 py-3 space-y-1.5">
+            <TerminalLine delay={0}  text="$ git clone kuznietsov.dev" color="text-muted-foreground" />
+            <TerminalLine delay={900}  text="Cloning... ████████████ 100%" color="text-primary" />
+            <TerminalLine delay={1800} text="$ npm install specialist" color="text-muted-foreground" />
+            <TerminalLine delay={2700} text="✓ 20 years experience loaded" color="text-green-400" />
+            <TerminalLine delay={3600} text="✓ certifications verified" color="text-green-400" />
+            <TerminalLine delay={4500} text="$ ./deploy --to=your-team" color="text-muted-foreground" />
+            <TerminalLine delay={5400} text="🚀 Ready to ship!" color="text-primary" blink />
+          </div>
+        </div>
+
         <a
           href="#features"
           className="mt-12 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -140,6 +159,21 @@ function TypewriterText({ text }: { text: string }) {
       {displayed}
       {!done && <span className="animate-pulse">|</span>}
     </>
+  )
+}
+
+function TerminalLine({ text, delay, color, blink }: { text: string; delay: number; color: string; blink?: boolean }) {
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), delay)
+    return () => clearTimeout(t)
+  }, [delay])
+  if (!visible) return <div className="h-4" />
+  return (
+    <p className={`${color} animate-fade-in`}>
+      {text}
+      {blink && <span className="animate-pulse ml-1">█</span>}
+    </p>
   )
 }
 
