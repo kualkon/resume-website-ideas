@@ -1,6 +1,6 @@
 import { profile } from "@/lib/resume-data"
 import { buttonVariants } from "@/components/ui/button"
-import { Phone, Mail, MessageCircle, FileDown } from "lucide-react"
+import { Phone, Mail, MessageCircle, FileDown, Linkedin } from "lucide-react"
 
 export function Contact() {
   return (
@@ -26,7 +26,7 @@ export function Contact() {
               Скачать PDF-резюме
             </a>
 
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-4 gap-3">
               <ContactButton
                 href={`tel:${profile.phone.replace(/\s/g, "")}`}
                 icon={<Phone className="size-5" />}
@@ -35,12 +35,18 @@ export function Contact() {
               <ContactButton
                 href={`mailto:${profile.email}`}
                 icon={<Mail className="size-5" />}
-                label="Написать"
+                label="Email"
               />
               <ContactButton
                 href={`https://wa.me/${profile.phone.replace(/\D/g, "")}`}
                 icon={<MessageCircle className="size-5" />}
                 label="WhatsApp"
+                external
+              />
+              <ContactButton
+                href={profile.linkedin}
+                icon={<Linkedin className="size-5" />}
+                label="LinkedIn"
                 external
               />
             </div>
