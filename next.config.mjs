@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/cv',
+  basePath: '/resume',
   typescript: {
     ignoreBuildErrors: true,
   },
