@@ -40,7 +40,7 @@ export function Pricing() {
             <div className="mt-4 flex items-center gap-2 rounded-xl bg-primary/10 px-4 py-2.5">
               <Clock className="size-4 shrink-0 text-primary" />
               <p className="font-mono text-xs text-primary">
-                Доступность: ограничена · Статус: открыт к офферам
+                Доступность: ограничена&nbsp;&nbsp;·&nbsp;&nbsp;Открыт к офферам
               </p>
             </div>
             <p className="mt-3 text-xs text-muted-foreground/60">
