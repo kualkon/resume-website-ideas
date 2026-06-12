@@ -54,10 +54,11 @@ export function Hero() {
         <div className="mt-8 flex flex-col gap-3">
           <a
             href={profile.resumePdf}
+            download="Oleksandr_Kuznietsov_CV.pdf"
             className={buttonVariants({ size: "lg", className: "h-12 text-base font-semibold" })}
           >
             <Sparkles className="size-4" />
-            Начать бесплатный пробный период
+            Скачать резюме (PDF)
           </a>
           <p className="text-xs text-muted-foreground">
             Без карты. Без скрытых платежей. Испытательный срок по договорённости.

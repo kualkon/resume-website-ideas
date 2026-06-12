@@ -11,7 +11,7 @@ export const profile = {
   telegram: "https://t.me/kualkon",
   linkedin: "https://linkedin.com/in/kualkon",
   github: "https://github.com/kualkon",
-  resumePdf: "#",
+  resumePdf: "/cv.pdf",
   uptime: "99.9%",
   experienceYears: "20+",
   shipped: "500+",
