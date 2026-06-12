@@ -27,6 +27,18 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-md text-center">
+
+        {/* Avatar */}
+        <div className="mb-6 flex justify-center">
+          <div className="avatar-ring relative size-28 rounded-full p-[3px]">
+            <img
+              src="/avatar.png"
+              alt="Oleksandr Kuznietsov"
+              className="avatar-nod size-full rounded-full object-cover object-top"
+            />
+          </div>
+        </div>
+
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-primary">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
@@ -116,6 +128,24 @@ export function Hero() {
         @keyframes float3 {
           0%, 100% { transform: translate(-50%, 0) scale(1); }
           50% { transform: translate(-50%, -20px) scale(1.05); }
+        }
+        .avatar-ring {
+          background: conic-gradient(from 0deg, #10b981, #6366f1, #10b981);
+          animation: spin-ring 4s linear infinite;
+        }
+        @keyframes spin-ring {
+          to { transform: rotate(360deg); }
+        }
+        .avatar-nod {
+          animation: nod 4s ease-in-out infinite;
+          transform-origin: center bottom;
+        }
+        @keyframes nod {
+          0%, 100% { transform: rotate(0deg) scale(1); }
+          20%       { transform: rotate(-2deg) scale(1.02); }
+          40%       { transform: rotate(2deg) scale(1.02); }
+          60%       { transform: rotate(-1deg) scale(1.01); }
+          80%       { transform: rotate(0deg) scale(1); }
         }
       `}</style>
     </section>
