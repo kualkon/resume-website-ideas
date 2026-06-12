@@ -9,26 +9,26 @@ function SalaryTicker() {
   const [blink, setBlink] = useState(true)
   const ref = useRef<HTMLDivElement>(null)
   const animated = useRef(false)
+  const rafRef = useRef<number>(0)
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && !animated.current) {
         animated.current = true
-        const target = 2500
-        const duration = 1800
-        const start = Date.now()
+        const min = 2500
+        const max = 3500
+        const period = 3000
         const tick = () => {
-          const elapsed = Date.now() - start
-          const progress = Math.min(elapsed / duration, 1)
-          const eased = 1 - Math.pow(1 - progress, 3)
-          setCount(Math.floor(eased * target))
-          if (progress < 1) requestAnimationFrame(tick)
+          const t = (Date.now() % period) / period
+          const eased = (1 - Math.cos(t * 2 * Math.PI)) / 2
+          setCount(Math.round(min + eased * (max - min)))
+          rafRef.current = requestAnimationFrame(tick)
         }
-        requestAnimationFrame(tick)
+        rafRef.current = requestAnimationFrame(tick)
       }
     })
     if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
+    return () => { observer.disconnect(); if (rafRef.current) cancelAnimationFrame(rafRef.current) }
   }, [])
 
   useEffect(() => {
