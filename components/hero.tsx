@@ -130,22 +130,17 @@ export function Hero() {
           50% { transform: translate(-50%, -20px) scale(1.05); }
         }
         .avatar-ring {
-          background: conic-gradient(from 0deg, #10b981, #6366f1, #10b981);
-          animation: spin-ring 4s linear infinite;
-        }
-        @keyframes spin-ring {
-          to { transform: rotate(360deg); }
+          background: linear-gradient(135deg, #10b981, #6366f1);
         }
         .avatar-nod {
-          animation: nod 4s ease-in-out infinite;
-          transform-origin: center bottom;
+          animation: smile 5s ease-in-out infinite;
+          transform-origin: center center;
         }
-        @keyframes nod {
-          0%, 100% { transform: rotate(0deg) scale(1); }
-          20%       { transform: rotate(-2deg) scale(1.02); }
-          40%       { transform: rotate(2deg) scale(1.02); }
-          60%       { transform: rotate(-1deg) scale(1.01); }
-          80%       { transform: rotate(0deg) scale(1); }
+        @keyframes smile {
+          0%,100% { transform: scale(1)    rotate(0deg); }
+          25%      { transform: scale(1.04) rotate(-1.5deg); }
+          50%      { transform: scale(1.06) rotate(0deg); }
+          75%      { transform: scale(1.04) rotate(1.5deg); }
         }
       `}</style>
     </section>
