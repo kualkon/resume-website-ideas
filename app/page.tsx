@@ -20,6 +20,9 @@ export default function Page() {
           loaded ? "opacity-100" : "opacity-0"
         }`}
       >
+        <div className="bg-primary py-2 text-center text-sm font-medium text-primary-foreground">
+          Ищу штатную работу
+        </div>
         <Hero />
         <Features />
         <Pricing />
