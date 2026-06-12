@@ -24,28 +24,30 @@ export function Pricing() {
           </div>
 
           {/* Шуточный блок срочности */}
-          <div className="relative rounded-2xl border border-primary bg-card p-5 ring-1 ring-primary overflow-hidden">
-            <span className="absolute -top-3 left-5 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+          <div className="rounded-2xl border border-primary bg-card ring-1 ring-primary overflow-hidden">
+            <div className="bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground">
               🔥 Ограниченное предложение
-            </span>
-            <div className="mt-2 flex items-start gap-3">
-              <Zap className="mt-0.5 size-5 shrink-0 text-primary" />
-              <div>
-                <h3 className="font-semibold">Будьте первыми</h3>
-                <p className="mt-1.5 text-sm text-muted-foreground">
-                  Экземпляр в единственном числе. Очередь уже формируется. Ранние партнёры получают повышенный приоритет в поддержке и лучший кофе на онбординге.*
+            </div>
+            <div className="p-5">
+              <div className="flex items-start gap-3">
+                <Zap className="mt-0.5 size-5 shrink-0 text-primary" />
+                <div>
+                  <h3 className="font-semibold">Будьте первыми</h3>
+                  <p className="mt-1.5 text-sm text-muted-foreground">
+                    Экземпляр в единственном числе. Очередь уже формируется. Ранние партнёры получают повышенный приоритет в поддержке и лучший кофе на онбординге.*
+                  </p>
+                </div>
+              </div>
+              <div className="mt-4 flex items-center gap-2 rounded-xl bg-primary/10 px-4 py-2.5">
+                <Clock className="size-4 shrink-0 text-primary" />
+                <p className="font-mono text-xs text-primary whitespace-nowrap">
+                  Доступность: ограничена · Открыт к офферам
                 </p>
               </div>
-            </div>
-            <div className="mt-4 flex items-center gap-2 rounded-xl bg-primary/10 px-4 py-2.5">
-              <Clock className="size-4 shrink-0 text-primary" />
-              <p className="font-mono text-xs text-primary whitespace-nowrap">
-                Доступность: ограничена · Открыт к офферам
+              <p className="mt-3 text-xs text-muted-foreground/60">
+                * кофе за свой счёт
               </p>
             </div>
-            <p className="mt-3 text-xs text-muted-foreground/60">
-              * кофе за свой счёт
-            </p>
           </div>
         </div>
       </div>
