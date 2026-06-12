@@ -58,6 +58,9 @@ export function Contact() {
           <p className="mt-1 text-xs text-muted-foreground/70">
             Собрано с любовью и кофе. Все «отзывы» — художественное преувеличение.
           </p>
+          <p className="mt-4 text-xs text-muted-foreground/50 border-t border-border pt-4 leading-relaxed">
+            Данный сайт — стилизованное резюме. Готов к стандартному найму, трудовому договору и всем обычным HR-процедурам.
+          </p>
         </footer>
       </div>
     </section>
