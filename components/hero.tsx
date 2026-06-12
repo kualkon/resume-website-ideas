@@ -7,7 +7,7 @@ import { useEffect, useState, useRef } from "react"
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden px-5 pt-16 pb-12 sm:pt-24">
+    <section className="relative overflow-hidden px-5 pt-6 pb-12 sm:pt-10">
       {/* Grid backdrop */}
       <div
         aria-hidden
