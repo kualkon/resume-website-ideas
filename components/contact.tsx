@@ -1,6 +1,6 @@
 import { profile } from "@/lib/resume-data"
 import { buttonVariants } from "@/components/ui/button"
-import { Phone, Mail, Send, FileDown } from "lucide-react"
+import { Phone, Mail, MessageCircle, FileDown } from "lucide-react"
 
 export function Contact() {
   return (
@@ -38,9 +38,9 @@ export function Contact() {
                 label="Написать"
               />
               <ContactButton
-                href={profile.telegram}
-                icon={<Send className="size-5" />}
-                label="Telegram"
+                href={`https://wa.me/${profile.phone.replace(/\D/g, "")}`}
+                icon={<MessageCircle className="size-5" />}
+                label="WhatsApp"
                 external
               />
             </div>

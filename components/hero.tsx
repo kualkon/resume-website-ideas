@@ -50,8 +50,8 @@ export function Hero() {
         </div>
 
         <div className="mt-12 grid grid-cols-3 gap-3 text-left">
-          <Stat value={profile.experienceYears} label="лет в проде" />
-          <Stat value={profile.shipped} label="фич в релизе" />
+          <Stat value={profile.experienceYears} label="лет в IT-сфере" />
+          <Stat value={profile.shipped} label="решений и проектов" />
           <Stat value={profile.uptime} label="мой аптайм" />
         </div>
 

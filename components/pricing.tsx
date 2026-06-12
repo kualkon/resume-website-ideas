@@ -11,9 +11,7 @@ export function Pricing() {
           kicker="Тарифы"
           title="Выберите свой уровень (но он уже выбран)"
         />
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          История версий продукта. Текущая сборка отмечена — даунгрейд недоступен.
-        </p>
+
 
         <div className="mt-8 grid gap-4">
           {tiers.map((tier) => (

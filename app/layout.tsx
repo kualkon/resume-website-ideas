@@ -10,9 +10,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Алексей Соколов — Senior Developer v3.0',
+  title: 'Oleksandr Kuznietsov — IT-специалист v20.0',
   description:
-    'Соискатель на роль разработчика. Production-ready инженер с гарантией аптайма по понедельникам.',
+    'IT-специалист выездного обслуживания и системный инженер. 20 лет опыта, сертифицирован MikroTik, открыт к предложениям.',
   generator: 'v0.app',
   icons: {
     icon: [
