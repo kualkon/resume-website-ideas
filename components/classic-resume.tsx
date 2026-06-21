@@ -137,8 +137,34 @@ export function ClassicResume() {
 
         <Divider />
 
+        {/* ERP / Accounting */}
+        <Section title="Учётные и бухгалтерские системы">
+          <p className="mt-2 text-sm text-muted-foreground">
+            Более 15 лет работы с различными системами учёта — от развёртывания и настройки до интеграции с оборудованием и обучения сотрудников.
+          </p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            {[
+              { name: "1С: Предприятие", desc: "Установка, настройка, обновление, пользовательская поддержка" },
+              { name: "BAS / BAF", desc: "Украинский аналог 1С — развёртывание и администрирование" },
+              { name: "Системы учёта товаров", desc: "Складские и торговые решения: приход, расход, инвентаризация" },
+              { name: "Кассовые системы", desc: "POS-терминалы, фискальные регистраторы, интеграция с учётом" },
+              { name: "ERP-интеграции", desc: "Связка учётных систем с сетью, серверами и периферией" },
+              { name: "Резервное копирование баз данных", desc: "Настройка автобэкапов, восстановление, мониторинг" },
+            ].map((item, i) => (
+              <FadeIn key={i} delay={i * 60}>
+                <div className="rounded-xl border border-border bg-card p-4 hover:border-blue-500/50 transition-colors">
+                  <p className="font-medium text-sm">{item.name}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">{item.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </Section>
+
+        <Divider />
+
         {/* Skills */}
-        <Section title="Навыки">
+        <Section title="Технические навыки">
           <div className="mt-4 flex flex-wrap gap-2">
             {skills.filter(s => s !== "Кофе ☕").map((skill, i) => (
               <FadeIn key={skill} delay={i * 40}>
