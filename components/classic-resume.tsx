@@ -54,6 +54,11 @@ export function ClassicResume() {
             </a>
           </div>
 
+          {/* About */}
+          <div className="mt-5 w-full rounded-xl border border-blue-600/30 bg-card px-5 py-4 text-left text-sm text-muted-foreground leading-relaxed">
+            Люблю сложные задачи — именно они дают рост. Быстро осваиваю новые технологии и инструменты: если не знаю — разберусь раньше, чем ожидают. Сейчас активно изучаю и внедряю AI-инструменты в повседневную работу.
+          </div>
+
           {/* Stats */}
           <div className="mt-8 grid grid-cols-3 gap-3 w-full">
             {[
@@ -164,8 +169,11 @@ export function ClassicResume() {
         {/* Skills */}
         <Section title="Технические навыки">
           <div className="mt-4 flex flex-wrap gap-2">
-            {skills.filter(s => s !== "Кофе ☕").map((skill, i) => (
-              <FadeIn key={skill} delay={i * 40}>
+            <span className="rounded-lg border border-blue-500 bg-blue-600/10 px-3 py-1.5 text-sm text-blue-500 font-medium">
+              🤖 AI-инструменты (активно внедряю)
+            </span>
+            {skills.filter(s => s !== "Кофе ☕" && s !== "AI-инструменты (активно)").map((skill, i) => (
+              <FadeIn key={skill} delay={(i + 1) * 40}>
                 <span className="rounded-lg border border-border bg-card px-3 py-1.5 text-sm hover:border-blue-500 hover:text-blue-500 transition-colors cursor-default">
                   {skill}
                 </span>
