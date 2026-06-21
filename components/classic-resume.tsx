@@ -255,7 +255,6 @@ export function ClassicResume() {
         </Section>
 
         <footer className="mt-16 text-center space-y-2">
-          <p className="text-sm text-muted-foreground">{profile.name} · IT-специалист · 2025</p>
           <p className="text-xs text-muted-foreground/50">
             Данный сайт — стилизованное резюме. Готов к стандартному найму, трудовому договору и всем обычным HR-процедурам.
           </p>
