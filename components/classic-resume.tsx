@@ -210,7 +210,7 @@ export function ClassicResume() {
           <div className="mt-4 rounded-xl border border-blue-600/40 bg-card p-5">
             <div className="flex items-baseline gap-2">
               <span className="text-3xl font-bold text-blue-500">от 2 500 €</span>
-              <span className="text-muted-foreground">/ месяц брутто</span>
+              <span className="text-muted-foreground">/ месяц нетто</span>
             </div>
             <p className="mt-2 text-sm text-muted-foreground">
               Полная занятость. Возможен гибридный формат. Готов к переговорам.
