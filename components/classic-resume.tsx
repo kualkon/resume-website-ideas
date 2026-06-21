@@ -243,12 +243,9 @@ export function ClassicResume() {
         {/* Зарплата */}
         <Section title="Условия">
           <div className="mt-4 rounded-xl border border-blue-600/40 bg-card p-5">
-            <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-bold text-blue-500">от 2 500 €</span>
-              <span className="text-muted-foreground">/ месяц нетто</span>
-            </div>
+            <p className="font-semibold text-foreground">Оплата, соответствующая опыту и уровню задач</p>
             <p className="mt-2 text-sm text-muted-foreground">
-              Полная занятость. Возможен гибридный формат. Готов к переговорам.
+              Готов обсудить условия индивидуально. Полная занятость, возможен гибридный формат.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               {["Full-time", "Hybrid OK", "Nürnberg / Bayern", "Führerschein B"].map(tag => (
