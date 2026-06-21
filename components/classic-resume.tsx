@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { profile, features, skills, testimonials, faq } from "@/lib/resume-data"
-import { Phone, Mail, MessageCircle, FileDown, MapPin, ChevronDown } from "lucide-react"
+import { profile, skills } from "@/lib/resume-data"
+import { Phone, Mail, MessageCircle, FileDown, MapPin } from "lucide-react"
 
 export function ClassicResume() {
   return (
@@ -191,41 +191,6 @@ export function ClassicResume() {
                 <span key={tag} className="rounded-full bg-blue-600/10 px-3 py-1 text-xs text-blue-500">{tag}</span>
               ))}
             </div>
-          </div>
-        </Section>
-
-        <Divider />
-
-        {/* Отзывы */}
-        <Section title="Рекомендации">
-          <div className="mt-4 space-y-3">
-            {testimonials.map((t, i) => (
-              <FadeIn key={i} delay={i * 100}>
-                <div className="rounded-xl border border-border bg-card p-4">
-                  <p className="text-sm text-muted-foreground leading-relaxed">«{t.quote}»</p>
-                  <div className="mt-3 flex items-center gap-2">
-                    <div className="size-7 rounded-full bg-blue-600/20 flex items-center justify-center text-xs font-bold text-blue-500">
-                      {t.author[0]}
-                    </div>
-                    <div>
-                      <p className="text-xs font-medium">{t.author}</p>
-                      <p className="text-xs text-muted-foreground">{t.role}</p>
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </Section>
-
-        <Divider />
-
-        {/* FAQ */}
-        <Section title="Вопросы и ответы">
-          <div className="mt-4 space-y-2">
-            {faq.map((item, i) => (
-              <FaqItem key={i} q={item.q} a={item.a} />
-            ))}
           </div>
         </Section>
 
