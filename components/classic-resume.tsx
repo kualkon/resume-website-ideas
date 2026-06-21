@@ -56,7 +56,7 @@ export function ClassicResume() {
 
           {/* About */}
           <div className="mt-5 w-full rounded-xl border border-blue-600/30 bg-card px-5 py-4 text-left text-sm text-muted-foreground leading-relaxed">
-            Люблю сложные задачи — именно они дают рост. Быстро осваиваю новые технологии и инструменты: если не знаю — разберусь раньше, чем ожидают. Сейчас активно изучаю и внедряю AI-инструменты в повседневную работу.
+            20 лет опыта + привычка учиться каждый день. Сейчас — AI в реальных задачах.
           </div>
 
           {/* Stats */}
