@@ -82,7 +82,7 @@ export function ClassicResume() {
             {[
               {
                 role: "Руководитель IT-отдела / Выездной специалист",
-                company: "Qwertyshop",
+                company: "Qwertyshop — IT-аутсорсинг, 50+ клиентов",
                 period: "2012 — 2024",
                 location: "Одесса, Украина",
                 points: [
@@ -111,6 +111,17 @@ export function ClassicResume() {
                 points: [
                   "Управление командой продаж",
                   "Кадровое планирование и сертификации",
+                ],
+              },
+              {
+                role: "Стажёр / Специалист по продажам и техподдержке",
+                company: "Диавес — национальная сеть магазинов компьютерной техники",
+                period: "до 2002",
+                location: "Киев / Одесса, Украина",
+                points: [
+                  "Стажировка после окончания института",
+                  "Продажи и консультирование покупателей по компьютерной технике",
+                  "Базовая техническая поддержка и сборка ПК",
                 ],
               },
             ].map((job, i) => (
@@ -197,6 +208,30 @@ export function ClassicResume() {
                 <div className="rounded-xl border border-border bg-card px-4 py-3 hover:border-blue-500/50 transition-colors">
                   <p className="font-medium text-sm">{cert.name}</p>
                   <p className="text-xs text-muted-foreground">{cert.org}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </Section>
+
+        <Divider />
+
+        {/* Языки */}
+        <Section title="Языки">
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            {[
+              { lang: "Украинский", level: "C2", note: "родной" },
+              { lang: "Русский", level: "C2", note: "родной" },
+              { lang: "Немецкий", level: "B1", note: "в процессе" },
+              { lang: "Английский", level: "B1", note: "технический" },
+            ].map((l, i) => (
+              <FadeIn key={i} delay={i * 60}>
+                <div className="rounded-xl border border-border bg-card px-4 py-3 flex items-center justify-between hover:border-blue-500/50 transition-colors">
+                  <div>
+                    <p className="font-medium text-sm">{l.lang}</p>
+                    <p className="text-xs text-muted-foreground">{l.note}</p>
+                  </div>
+                  <span className="font-mono text-sm font-bold text-blue-500">{l.level}</span>
                 </div>
               </FadeIn>
             ))}
