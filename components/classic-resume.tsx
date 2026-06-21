@@ -180,18 +180,15 @@ export function ClassicResume() {
         <Section title="Обучение и сертификаты">
           <div className="mt-4 space-y-3">
             {[
-              { name: "MTCNA & MTCRE", org: "MikroTik", year: "2018" },
-              { name: "AWS Cloud Essentials", org: "Amazon Web Services", year: "2022" },
-              { name: "DevOps курс", org: "Hillel IT School", year: "2023" },
-              { name: "Docker & Kubernetes", org: "Самообразование", year: "2023" },
+              { name: "MTCNA & MTCRE", org: "MikroTik" },
+              { name: "AWS Cloud Essentials", org: "Amazon Web Services" },
+              { name: "DevOps курс", org: "Hillel IT School" },
+              { name: "Docker & Kubernetes", org: "Самообразование" },
             ].map((cert, i) => (
               <FadeIn key={i} delay={i * 80}>
-                <div className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 hover:border-blue-500/50 transition-colors">
-                  <div>
-                    <p className="font-medium text-sm">{cert.name}</p>
-                    <p className="text-xs text-muted-foreground">{cert.org}</p>
-                  </div>
-                  <span className="text-xs text-blue-500 font-mono">{cert.year}</span>
+                <div className="rounded-xl border border-border bg-card px-4 py-3 hover:border-blue-500/50 transition-colors">
+                  <p className="font-medium text-sm">{cert.name}</p>
+                  <p className="text-xs text-muted-foreground">{cert.org}</p>
                 </div>
               </FadeIn>
             ))}
