@@ -1,7 +1,21 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { profile, skills } from "@/lib/resume-data"
+import { profile } from "@/lib/resume-data"
+
+const skillsDE = [
+  "Windows & Linux",
+  "VMware / HyperV",
+  "AWS / Azure / GCP",
+  "Docker / Kubernetes",
+  "MikroTik / OpenWrt",
+  "Asterisk / FreePBX",
+  "Raspberry Pi / Arduino",
+  "Videoüberwachung",
+  "VPN & Routing",
+  "IP-Telefonie",
+  "Löten & Elektronik",
+]
 import { Phone, Mail, MessageCircle, FileDown, MapPin } from "lucide-react"
 
 export function ClassicResume() {
@@ -183,7 +197,7 @@ export function ClassicResume() {
             <span className="rounded-lg border border-blue-500 bg-blue-600/10 px-3 py-1.5 text-sm text-blue-500 font-medium">
               🤖 KI-Tools (aktiv im Einsatz)
             </span>
-            {skills.filter(s => s !== "Кофе ☕" && s !== "AI-инструменты (активно)").map((skill, i) => (
+            {skillsDE.map((skill, i) => (
               <FadeIn key={skill} delay={(i + 1) * 40}>
                 <span className="rounded-lg border border-border bg-card px-3 py-1.5 text-sm hover:border-blue-500 hover:text-blue-500 transition-colors cursor-default">
                   {skill}
