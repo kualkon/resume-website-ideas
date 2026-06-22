@@ -38,7 +38,7 @@ export function ClassicResume() {
 
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <a
-              href={profile.resumePdf}
+              href="/de/cv.pdf"
               download="Oleksandr_Kuznietsov_CV.pdf"
               className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-blue-700 transition-colors"
             >
