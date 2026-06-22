@@ -9,7 +9,7 @@ export function ClassicResume() {
     <div className="min-h-dvh bg-background text-foreground">
       {/* Top bar */}
       <div className="bg-blue-600 py-2 text-center text-sm font-medium text-white">
-        Ищу полную занятость · IT Support · System Administration · Network Engineering · Technical Support
+        Ich suche eine Festanstellung · IT Support · Systemadministration · Netzwerktechnik · Technischer Support
       </div>
 
       <main className="mx-auto max-w-2xl px-5 pb-20">
@@ -25,15 +25,15 @@ export function ClassicResume() {
           </div>
 
           <h1 className="text-3xl font-bold tracking-tight">{profile.name}</h1>
-          <p className="mt-2 text-lg text-blue-500 font-medium">IT-специалист выездного обслуживания · Системный инженер</p>
+          <p className="mt-2 text-lg text-blue-500 font-medium">IT Field Service Specialist · Systemingenieur</p>
 
           <div className="mt-3 flex items-center gap-1.5 text-sm text-muted-foreground">
             <MapPin className="size-3.5" />
-            <span>Nürnberg, Bayern · Разрешение на работу есть</span>
+            <span>Nürnberg, Bayern · Arbeitserlaubnis vorhanden</span>
           </div>
 
           <p className="mt-5 max-w-md text-muted-foreground leading-relaxed">
-            20 лет практического опыта в полевом IT-обслуживании. Диагностика, инфраструктура, сети — от ноутбука до серверной. Спокойно работаю в дедлайн и умею объяснять технические вещи нетехническим людям.
+            20 Jahre praktische Erfahrung im IT-Außendienst. Diagnose, Infrastruktur, Netzwerke — vom Laptop bis zum Serverraum. Ich arbeite ruhig unter Zeitdruck und erkläre technische Themen auch nicht-technischen Ansprechpartnern verständlich.
           </p>
 
           <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -43,28 +43,28 @@ export function ClassicResume() {
               className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-blue-700 transition-colors"
             >
               <FileDown className="size-4" />
-              Скачать резюме PDF
+              Lebenslauf herunterladen (PDF)
             </a>
             <a
               href={`mailto:${profile.email}`}
               className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-2.5 text-sm font-semibold hover:border-blue-500 transition-colors"
             >
               <Mail className="size-4" />
-              Написать
+              E-Mail schreiben
             </a>
           </div>
 
           {/* About */}
           <div className="mt-5 w-full rounded-xl border border-blue-600/30 bg-card px-5 py-4 text-left text-sm text-muted-foreground leading-relaxed">
-            20 лет опыта + привычка учиться каждый день. Сейчас — AI в реальных задачах.
+            20 Jahre Erfahrung + die Gewohnheit, täglich dazuzulernen. Aktuell: KI-Tools im praktischen Einsatz.
           </div>
 
           {/* Stats */}
           <div className="mt-8 grid grid-cols-3 gap-3 w-full">
             {[
-              { value: "20+", label: "лет опыта" },
-              { value: "90+", label: "проектов" },
-              { value: "99.9%", label: "надёжность" },
+              { value: "20+", label: "Jahre Erfahrung" },
+              { value: "90+", label: "Projekte" },
+              { value: "99,9%", label: "Zuverlässigkeit" },
             ].map(({ value, label }) => (
               <div key={label} className="rounded-xl border border-border bg-card p-4 text-center">
                 <p className="text-2xl font-bold text-blue-500">{value}</p>
@@ -77,51 +77,51 @@ export function ClassicResume() {
         <Divider />
 
         {/* Experience */}
-        <Section title="Опыт работы">
+        <Section title="Berufserfahrung">
           <div className="space-y-6 mt-4">
             {[
               {
-                role: "Руководитель IT-отдела / Выездной специалист",
-                company: "Qwertyshop — IT-аутсорсинг, 50+ клиентов",
+                role: "IT-Abteilungsleiter / Außendiensttechniker",
+                company: "Qwertyshop — IT-Outsourcing, 50+ Kunden",
                 period: "2012 — 2024",
-                location: "Одесса, Украина",
+                location: "Odessa, Ukraine",
                 points: [
-                  "Полная IT-инфраструктура компании: серверы, сети, рабочие станции",
-                  "Миграция критических систем в облако (AWS/Azure) в условиях военного времени",
-                  "Настройка MikroTik, VPN, IP-телефонии (Asterisk/FreePBX)",
-                  "Видеонаблюдение, кассовые системы, техподдержка сотрудников",
+                  "Vollständige IT-Infrastruktur des Unternehmens: Server, Netzwerke, Arbeitsplätze",
+                  "Migration kritischer Systeme in die Cloud (AWS/Azure) unter Kriegsbedingungen",
+                  "Konfiguration von MikroTik, VPN, IP-Telefonie (Asterisk/FreePBX)",
+                  "Videoüberwachung, Kassensysteme, technischer Support für Mitarbeiter",
                 ],
               },
               {
-                role: "Менеджер по работе с корпоративными клиентами",
+                role: "Key Account Manager",
                 company: "YUDIKOM",
                 period: "2008 — 2012",
-                location: "Одесса, Украина",
+                location: "Odessa, Ukraine",
                 points: [
-                  "B2B продажи IT-оборудования и услуг",
-                  "Составление коммерческих предложений и закупки",
-                  "Проведение обучающих семинаров для клиентов",
+                  "B2B-Vertrieb von IT-Geräten und Dienstleistungen",
+                  "Erstellung von Angeboten und Beschaffung",
+                  "Durchführung von Schulungsseminaren für Kunden",
                 ],
               },
               {
-                role: "Руководитель отдела продаж",
+                role: "Vertriebsleiter",
                 company: "UNITRADE",
                 period: "2002 — 2008",
-                location: "Одесса, Украина",
+                location: "Odessa, Ukraine",
                 points: [
-                  "Управление командой продаж",
-                  "Кадровое планирование и сертификации",
+                  "Leitung des Vertriebsteams",
+                  "Personalplanung und Zertifizierungen",
                 ],
               },
               {
-                role: "Стажёр / Специалист по продажам и техподдержке",
-                company: "Диавес — национальная сеть магазинов компьютерной техники",
-                period: "до 2002",
-                location: "Киев / Одесса, Украина",
+                role: "Praktikant / Vertriebs- und Technik-Spezialist",
+                company: "Diaves — nationale Computerfachhandelskette",
+                period: "bis 2002",
+                location: "Kiew / Odessa, Ukraine",
                 points: [
-                  "Стажировка после окончания института",
-                  "Продажи и консультирование покупателей по компьютерной технике",
-                  "Базовая техническая поддержка и сборка ПК",
+                  "Praktikum nach dem Hochschulabschluss",
+                  "Verkauf und Kundenberatung für Computertechnik",
+                  "Grundlegender technischer Support und PC-Zusammenbau",
                 ],
               },
             ].map((job, i) => (
@@ -154,16 +154,16 @@ export function ClassicResume() {
         <Divider />
 
         {/* ERP / Accounting */}
-        <Section title="Учётные и бухгалтерские системы">
+        <Section title="Warenwirtschaft & Buchhaltungssysteme">
           <p className="mt-2 text-sm text-muted-foreground">
-            Более 15 лет работы с различными системами учёта — от развёртывания и настройки до интеграции с оборудованием и обучения сотрудников.
+            Über 15 Jahre Erfahrung mit verschiedenen Buchhaltungs- und Warenwirtschaftssystemen — von der Einrichtung und Konfiguration bis zur Hardware-Integration und Mitarbeiterschulung.
           </p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             {[
-{ name: "Системы учёта товаров", desc: "Складские и торговые решения: приход, расход, инвентаризация" },
-              { name: "Кассовые системы", desc: "POS-терминалы, фискальные регистраторы, интеграция с учётом" },
-              { name: "ERP-интеграции", desc: "Связка учётных систем с сетью, серверами и периферией" },
-              { name: "Резервное копирование баз данных", desc: "Настройка автобэкапов, восстановление, мониторинг" },
+              { name: "Warenwirtschaftssysteme", desc: "Lagerverwaltung und Handelslösungen: Wareneingang, -ausgang, Inventur" },
+              { name: "Kassensysteme", desc: "POS-Terminals, Fiskalregister, Integration mit Buchhaltung" },
+              { name: "ERP-Integrationen", desc: "Anbindung von Buchhaltungssystemen an Netzwerk, Server und Peripherie" },
+              { name: "Datenbank-Backup", desc: "Einrichtung automatischer Backups, Wiederherstellung, Monitoring" },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 60}>
                 <div className="rounded-xl border border-border bg-card p-4 hover:border-blue-500/50 transition-colors">
@@ -178,10 +178,10 @@ export function ClassicResume() {
         <Divider />
 
         {/* Skills */}
-        <Section title="Технические навыки">
+        <Section title="Technische Kenntnisse">
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="rounded-lg border border-blue-500 bg-blue-600/10 px-3 py-1.5 text-sm text-blue-500 font-medium">
-              🤖 AI-инструменты (активно внедряю)
+              🤖 KI-Tools (aktiv im Einsatz)
             </span>
             {skills.filter(s => s !== "Кофе ☕" && s !== "AI-инструменты (активно)").map((skill, i) => (
               <FadeIn key={skill} delay={(i + 1) * 40}>
@@ -195,14 +195,14 @@ export function ClassicResume() {
 
         <Divider />
 
-        {/* Сертификаты */}
-        <Section title="Обучение и сертификаты">
+        {/* Zertifikate */}
+        <Section title="Aus- & Weiterbildung">
           <div className="mt-4 space-y-3">
             {[
               { name: "MTCNA & MTCRE", org: "MikroTik" },
               { name: "AWS Cloud Essentials", org: "Amazon Web Services" },
-              { name: "DevOps курс", org: "Hillel IT School" },
-              { name: "Docker & Kubernetes", org: "Самообразование" },
+              { name: "DevOps-Kurs", org: "Hillel IT School" },
+              { name: "Docker & Kubernetes", org: "Selbststudium" },
             ].map((cert, i) => (
               <FadeIn key={i} delay={i * 80}>
                 <div className="rounded-xl border border-border bg-card px-4 py-3 hover:border-blue-500/50 transition-colors">
@@ -216,14 +216,14 @@ export function ClassicResume() {
 
         <Divider />
 
-        {/* Языки */}
-        <Section title="Языки">
+        {/* Sprachen */}
+        <Section title="Sprachkenntnisse">
           <div className="mt-4 grid grid-cols-2 gap-3">
             {[
-              { lang: "Украинский", level: "C2", note: "родной" },
-              { lang: "Русский", level: "C2", note: "родной" },
-              { lang: "Немецкий", level: "B1", note: "сертификат" },
-              { lang: "Английский", level: "B1", note: "технический" },
+              { lang: "Ukrainisch", level: "C2", note: "Muttersprache" },
+              { lang: "Russisch", level: "C2", note: "Muttersprache" },
+              { lang: "Deutsch", level: "B1", note: "Zertifikat" },
+              { lang: "Englisch", level: "B1", note: "Fachsprache" },
             ].map((l, i) => (
               <FadeIn key={i} delay={i * 60}>
                 <div className="rounded-xl border border-border bg-card px-4 py-3 flex items-center justify-between hover:border-blue-500/50 transition-colors">
@@ -240,15 +240,15 @@ export function ClassicResume() {
 
         <Divider />
 
-        {/* Зарплата */}
-        <Section title="Условия">
+        {/* Konditionen */}
+        <Section title="Beschäftigungswunsch">
           <div className="mt-4 rounded-xl border border-blue-600/40 bg-card p-5">
-            <p className="font-semibold text-foreground">Оплата, соответствующая опыту и уровню задач</p>
+            <p className="font-semibold text-foreground">Vergütung entsprechend Erfahrung und Aufgaben</p>
             <p className="mt-2 text-sm text-muted-foreground">
-              Готов обсудить условия индивидуально. Полная занятость, возможен гибридный формат.
+              Bereit, die Konditionen individuell zu besprechen. Vollzeitstelle, hybrides Arbeiten möglich.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
-              {["Full-time", "Hybrid OK", "Nürnberg / Bayern", "Führerschein B"].map(tag => (
+              {["Vollzeit", "Hybrid möglich", "Nürnberg / Bayern", "Führerschein Klasse B"].map(tag => (
                 <span key={tag} className="rounded-full bg-blue-600/10 px-3 py-1 text-xs text-blue-500">{tag}</span>
               ))}
             </div>
@@ -257,12 +257,12 @@ export function ClassicResume() {
 
         <Divider />
 
-        {/* Contact */}
-        <Section title="Контакты">
+        {/* Kontakt */}
+        <Section title="Kontakt">
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {[
-              { href: `tel:${profile.phone}`, icon: <Phone className="size-5" />, label: "Позвонить" },
-              { href: `mailto:${profile.email}`, icon: <Mail className="size-5" />, label: "Email" },
+              { href: `tel:${profile.phone}`, icon: <Phone className="size-5" />, label: "Anrufen" },
+              { href: `mailto:${profile.email}`, icon: <Mail className="size-5" />, label: "E-Mail" },
               { href: `https://wa.me/${profile.phone.replace(/\D/g, "")}`, icon: <MessageCircle className="size-5" />, label: "WhatsApp" },
               {
                 href: profile.linkedin, icon: (
@@ -288,10 +288,10 @@ export function ClassicResume() {
 
         <footer className="mt-16 text-center space-y-2">
           <p className="text-xs text-muted-foreground/50">
-            Данный сайт — стилизованное резюме. Готов к стандартному найму, трудовому договору и всем обычным HR-процедурам.
+            Diese Website ist ein stilisierter Lebenslauf. Ich bin offen für eine reguläre Anstellung, einen Arbeitsvertrag und alle üblichen HR-Verfahren.
           </p>
           <p className="text-[11px] text-muted-foreground/35">
-            📍 Ищу полную занятость | IT Support · System Administration · Network Engineering · Technical Support | Nürnberg/Bayern | Full-time | Разрешение на работу есть
+            📍 Suche Festanstellung | IT Support · Systemadministration · Netzwerktechnik · Technischer Support | Nürnberg/Bayern | Vollzeit | Arbeitserlaubnis vorhanden
           </p>
         </footer>
       </main>
@@ -339,26 +339,6 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
       className={`transition-all duration-500 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
     >
       {children}
-    </div>
-  )
-}
-
-function FaqItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false)
-  return (
-    <div className="rounded-xl border border-border bg-card overflow-hidden">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-4 py-3 text-left text-sm font-medium hover:text-blue-500 transition-colors"
-      >
-        {q}
-        <ChevronDown className={`size-4 shrink-0 transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-      {open && (
-        <div className="px-4 pb-4 text-sm text-muted-foreground leading-relaxed border-t border-border pt-3">
-          {a}
-        </div>
-      )}
     </div>
   )
 }
