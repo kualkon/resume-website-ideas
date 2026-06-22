@@ -63,7 +63,7 @@ export function ClassicResume() {
           <div className="mt-8 grid grid-cols-3 gap-3 w-full">
             {[
               { value: "20+", label: "лет опыта" },
-              { value: "500+", label: "проектов" },
+              { value: "90+", label: "проектов" },
               { value: "99.9%", label: "надёжность" },
             ].map(({ value, label }) => (
               <div key={label} className="rounded-xl border border-border bg-card p-4 text-center">
