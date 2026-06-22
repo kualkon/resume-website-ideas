@@ -7,7 +7,7 @@ export const profile = {
     "Полевой IT-специалист с боевым опытом. Диагностика, ремонт и инфраструктура — от ноутбука до серверной. Совместим с любым стеком, клиентом и кофемашиной.",
   status: "Открыт к предложениям",
   phone: "+49 15204165799",
-  email: "kualkon@gmail.com",
+  email: "kualkonde@gmail.com",
   telegram: "https://t.me/kualkon",
   linkedin: "https://linkedin.com/in/kualkon",
   github: "https://github.com/kualkon",
