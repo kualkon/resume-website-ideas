@@ -222,7 +222,7 @@ export function ClassicResume() {
             {[
               { lang: "Украинский", level: "C2", note: "родной" },
               { lang: "Русский", level: "C2", note: "родной" },
-              { lang: "Немецкий", level: "B1", note: "в процессе" },
+              { lang: "Немецкий", level: "A2→B1", note: "активно учу" },
               { lang: "Английский", level: "B1", note: "технический" },
             ].map((l, i) => (
               <FadeIn key={i} delay={i * 60}>
