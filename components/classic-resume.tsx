@@ -67,7 +67,7 @@ export function ClassicResume() {
 
           {/* About */}
           <div className="mt-5 w-full rounded-xl border border-blue-600/30 bg-card px-5 py-4 text-left text-sm text-muted-foreground leading-relaxed">
-Seit 2024 in Deutschland fachlich aktiv: IT-Praxis im Hotelbereich, eigene Serverinfrastruktur, KI-Pilotprojekt in der Buchhaltung. Lösungsorientiert, reisebereit, Führerschein Klasse B.
+Seit 2024 in Deutschland fachlich aktiv: IT-Praxis im Hotelbereich, eigene Serverinfrastruktur, KI-Pilotprojekt in der Buchhaltung. Deutsch B1, B2-Kurs läuft. Lösungsorientiert, reisebereit, Führerschein Klasse B.
           </div>
 
           {/* Stats */}
@@ -75,7 +75,7 @@ Seit 2024 in Deutschland fachlich aktiv: IT-Praxis im Hotelbereich, eigene Serve
             {[
               { value: "20+", label: "Jahre IT-Praxis" },
               { value: "12", label: "Jahre alleinverantwortlicher Systemingenieur" },
-              { value: "B1", label: "Deutsch" },
+              { value: "B1→B2", label: "Deutsch · B2-Kurs läuft" },
             ].map(({ value, label }) => (
               <div key={label} className="rounded-xl border border-border bg-card p-4 text-center">
                 <p className="text-2xl font-bold text-blue-500">{value}</p>
@@ -254,7 +254,7 @@ Seit 2024 in Deutschland fachlich aktiv: IT-Praxis im Hotelbereich, eigene Serve
             {[
               { lang: "Ukrainisch", level: "C2", note: "Muttersprache" },
               { lang: "Russisch", level: "C2", note: "Muttersprache" },
-              { lang: "Deutsch", level: "B1", note: "Zertifikat" },
+              { lang: "Deutsch", level: "B1→B2", note: "B2-Kurs läuft" },
               { lang: "Englisch", level: "B1", note: "Mittelstufe" },
             ].map((l, i) => (
               <FadeIn key={i} delay={i * 60}>
