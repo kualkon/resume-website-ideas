@@ -67,7 +67,7 @@ export function ClassicResume() {
 
           {/* About */}
           <div className="mt-5 w-full rounded-xl border border-blue-600/30 bg-card px-5 py-4 text-left text-sm text-muted-foreground leading-relaxed">
-            Seit 09/2024 in Deutschland durchgehend fachlich aktiv: Deutsch B1 (DTZ 04/2026), seit 09/2026 Berufssprachkurs B2, IT-Praxis im Hotelbereich, Eigenbetrieb einer Serverinfrastruktur und ein Pilotprojekt zum KI-Einsatz in der vorbereitenden Buchhaltung. Lösungsorientiert, reisebereit, Führerschein Klasse B.
+Seit 2024 in Deutschland fachlich aktiv: IT-Praxis im Hotelbereich, eigene Serverinfrastruktur, KI-Pilotprojekt in der Buchhaltung. Lösungsorientiert, reisebereit, Führerschein Klasse B.
           </div>
 
           {/* Stats */}
@@ -75,7 +75,7 @@ export function ClassicResume() {
             {[
               { value: "20+", label: "Jahre IT-Praxis" },
               { value: "12", label: "Jahre alleinverantwortlicher Systemingenieur" },
-              { value: "B1→B2", label: "Deutsch, Berufssprachkurs läuft" },
+              { value: "B1", label: "Deutsch" },
             ].map(({ value, label }) => (
               <div key={label} className="rounded-xl border border-border bg-card p-4 text-center">
                 <p className="text-2xl font-bold text-blue-500">{value}</p>
@@ -93,15 +93,14 @@ export function ClassicResume() {
             {[
               {
                 role: "IT-Praxis, Systembetrieb & Eigenprojekte",
-                company: "Deutschland — parallel zu Spracherwerb und Jobsuche",
-                period: "seit 09/2024",
+                company: "Deutschland",
+                period: "seit 2024",
                 location: "Oberbayern",
                 points: [
-                  "Praktische IT-Unterstützung in zwei Beherbergungsbetrieben: Netzwerk und Gäste-WLAN, Dual-WAN-Ausfallsicherung, Reservierungs-/PMS- und Kassensysteme, Einrichtung und Wartung der Endgeräte",
-                  "Einarbeitung in die Grundlagen der deutschen Buchführung: Belegwesen, Kontenrahmen (SKR), Lexware Office, Datenaustausch mit der Steuerkanzlei über DATEV",
-                  "Eigenes Pilotprojekt IT/Buchhaltung: KI-Modelle in der vorbereitenden Buchhaltung (Belegerkennung, Vorkontierung, Dublettenprüfung) zur Reduktion des manuellen Erfassungsaufwands",
-                  "Eigenbetrieb einer mehrteiligen Serverinfrastruktur (VPS, Backup, Monitoring, Wissensdatenbank) als Übungsfeld für Cloud- und Linux-Administration",
-                  "Deutsch: Integrationskurs abgeschlossen, DTZ-Zertifikat B1 (04/2026), Test „Leben in Deutschland“ bestanden; seit 09/2026 Berufssprachkurs B2 (BAMF, 500 UE)",
+                  "IT-Betreuung in zwei Hotels: Netzwerk und WLAN, Dual-WAN, PMS- und Kassensysteme, Endgeräte",
+                  "Praxis mit Lexware Office und DATEV-Datenaustausch",
+                  "KI-Pilotprojekt in der Buchhaltung: Belegerkennung und Vorkontierung",
+                  "Eigene Serverinfrastruktur: VPS, Backup, Monitoring",
                 ],
               },
               {
@@ -255,7 +254,7 @@ export function ClassicResume() {
             {[
               { lang: "Ukrainisch", level: "C2", note: "Muttersprache" },
               { lang: "Russisch", level: "C2", note: "Muttersprache" },
-              { lang: "Deutsch", level: "B1", note: "DTZ-Zertifikat 04/2026 · seit 09/2026 Kurs mit Ziel B2" },
+              { lang: "Deutsch", level: "B1", note: "Zertifikat" },
               { lang: "Englisch", level: "B1", note: "Mittelstufe" },
             ].map((l, i) => (
               <FadeIn key={i} delay={i * 60}>
