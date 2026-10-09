@@ -10,9 +10,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Oleksandr Kuznietsov — IT-специалист v20.0',
+  title: 'Oleksandr Kuznietsov — IT-Administrator · IT-Servicetechniker',
   description:
-    'IT-специалист выездного обслуживания и системный инженер. 20 лет опыта, сертифицирован MikroTik, открыт к предложениям. Ищу штатную позицию Field IT Engineer | Nürnberg/Bayern | Full-time | Разрешение на работу есть.',
+    'IT-Administrator, IT-Servicetechniker Außendienst und Systemingenieur mit über 20 Jahren Praxis. Active Directory / Entra ID, Microsoft 365, Windows Server, VMware/Hyper-V, MikroTik (MTCNA/MTCRE). Suche Festanstellung | Oberbayern, Raum Rosenheim / München | umzugs- und reisebereit | Arbeitserlaubnis vorhanden.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ru" className={`${geistSans.variable} ${geistMono.variable} bg-background`}>
+    <html lang="de" className={`${geistSans.variable} ${geistMono.variable} bg-background`}>
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

@@ -3,19 +3,16 @@
 import { useEffect, useRef, useState } from "react"
 import { profile } from "@/lib/resume-data"
 
-const skillsDE = [
-  "Windows & Linux",
-  "VMware / HyperV",
-  "AWS / Azure / GCP",
-  "Docker / Kubernetes",
-  "MikroTik / OpenWrt",
-  "Asterisk / FreePBX",
-  "Raspberry Pi / Arduino",
-  "Videoüberwachung",
-  "VPN & Routing",
-  "IP-Telefonie",
-  "Löten & Elektronik",
+const skillGroupsDE = [
+  { group: "Verzeichnisdienste & Cloud", items: ["Active Directory", "Microsoft Entra ID", "Microsoft 365 (Exchange Online, Teams, SharePoint)", "Gruppenrichtlinien (GPO)"] },
+  { group: "Server & Virtualisierung", items: ["Windows Server", "Linux-Administration", "VMware", "Hyper-V", "Backup- & Recovery-Konzepte"] },
+  { group: "Netzwerk & Security", items: ["Routing / Switching", "VPN", "Firewall", "Netzwerksegmentierung", "MikroTik / OpenWrt (MTCNA, MTCRE)"] },
+  { group: "Cloud & DevOps", items: ["AWS", "Microsoft Azure", "Google Cloud Platform", "DigitalOcean", "Docker", "Kubernetes", "OpenShift", "Grundlagen CI/CD"] },
+  { group: "Endgeräte & Hardware", items: ["Diagnose, Reparatur und Rollout von Workstations, Laptops, Servern, Kassensystemen und Druckern"] },
+  { group: "Telefonie & Sonstiges", items: ["IP-Telefonie (Asterisk / FreePBX, GSM-Gateway)", "Videoüberwachung"] },
 ]
+
+const learningDE = ["Microsoft Intune", "Veeam Backup & Replication", "Proxmox VE"]
 import { Phone, Mail, MessageCircle, FileDown, MapPin } from "lucide-react"
 
 export function ClassicResume() {
@@ -23,7 +20,7 @@ export function ClassicResume() {
     <div className="min-h-dvh bg-background text-foreground">
       {/* Top bar */}
       <div className="bg-blue-600 py-2 text-center text-sm font-medium text-white">
-        Ich suche eine Festanstellung · IT Support · Systemadministration · Netzwerktechnik · Technischer Support
+        Ich suche eine Festanstellung · IT-Administration · IT-Servicetechnik Außendienst · Netzwerktechnik · IT-Support
       </div>
 
       <main className="mx-auto max-w-2xl px-5 pb-20">
@@ -39,15 +36,15 @@ export function ClassicResume() {
           </div>
 
           <h1 className="text-3xl font-bold tracking-tight">{profile.name}</h1>
-          <p className="mt-2 text-lg text-blue-500 font-medium">IT Field Service Specialist · Systemingenieur</p>
+          <p className="mt-2 text-lg text-blue-500 font-medium">IT-Administrator · IT-Servicetechniker Außendienst · Systemingenieur</p>
 
           <div className="mt-3 flex items-center gap-1.5 text-sm text-muted-foreground">
-            <MapPin className="size-3.5" />
-            <span>Nürnberg, Bayern · Arbeitserlaubnis vorhanden</span>
+            <MapPin className="size-3.5 shrink-0" />
+            <span>Oberbayern, Raum Rosenheim / München · umzugs- und reisebereit · Arbeitserlaubnis vorhanden</span>
           </div>
 
           <p className="mt-5 max-w-md text-muted-foreground leading-relaxed">
-            20 Jahre praktische Erfahrung im IT-Außendienst. Diagnose, Infrastruktur, Netzwerke — vom Laptop bis zum Serverraum. Ich arbeite ruhig unter Zeitdruck und erkläre technische Themen auch nicht-technischen Ansprechpartnern verständlich.
+            Über 20 Jahre Praxis in Systemadministration, IT-Infrastruktur und technischem Außendienst, davon 12 Jahre als alleinverantwortlicher Systemingenieur. Schwerpunkte: Active Directory / Entra ID, Microsoft 365, Windows Server und Clients, Virtualisierung (VMware/Hyper-V), Netzwerktechnik (MikroTik MTCNA/MTCRE) sowie Diagnose und Rollout von Hardware beim Kunden.
           </p>
 
           <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -70,15 +67,15 @@ export function ClassicResume() {
 
           {/* About */}
           <div className="mt-5 w-full rounded-xl border border-blue-600/30 bg-card px-5 py-4 text-left text-sm text-muted-foreground leading-relaxed">
-            20 Jahre Erfahrung + die Gewohnheit, täglich dazuzulernen. Aktuell: KI-Tools im praktischen Einsatz.
+            Seit 09/2024 in Deutschland durchgehend fachlich aktiv: Deutsch B1 (DTZ 04/2026), seit 09/2026 Berufssprachkurs B2, IT-Praxis im Hotelbereich, Eigenbetrieb einer Serverinfrastruktur und ein Pilotprojekt zum KI-Einsatz in der vorbereitenden Buchhaltung. Lösungsorientiert, reisebereit, Führerschein Klasse B.
           </div>
 
           {/* Stats */}
           <div className="mt-8 grid grid-cols-3 gap-3 w-full">
             {[
-              { value: "20+", label: "Jahre Erfahrung" },
-              { value: "90+", label: "Projekte" },
-              { value: "99,9%", label: "Zuverlässigkeit" },
+              { value: "20+", label: "Jahre IT-Praxis" },
+              { value: "12", label: "Jahre alleinverantwortlicher Systemingenieur" },
+              { value: "B1→B2", label: "Deutsch, Berufssprachkurs läuft" },
             ].map(({ value, label }) => (
               <div key={label} className="rounded-xl border border-border bg-card p-4 text-center">
                 <p className="text-2xl font-bold text-blue-500">{value}</p>
@@ -95,47 +92,49 @@ export function ClassicResume() {
           <div className="space-y-6 mt-4">
             {[
               {
-                role: "IT-Abteilungsleiter / Außendiensttechniker",
-                company: "Qwertyshop — IT-Outsourcing, 50+ Kunden",
-                period: "2012 — 2024",
-                location: "Odessa, Ukraine",
+                role: "IT-Praxis, Systembetrieb & Eigenprojekte",
+                company: "Deutschland — parallel zu Spracherwerb und Jobsuche",
+                period: "seit 09/2024",
+                location: "Oberbayern",
                 points: [
-                  "Vollständige IT-Infrastruktur des Unternehmens: Server, Netzwerke, Arbeitsplätze",
-                  "Migration kritischer Systeme in die Cloud (AWS/Azure) unter Kriegsbedingungen",
-                  "Konfiguration von MikroTik, VPN, IP-Telefonie (Asterisk/FreePBX)",
-                  "Videoüberwachung, Kassensysteme, technischer Support für Mitarbeiter",
+                  "Praktische IT-Unterstützung in zwei Beherbergungsbetrieben: Netzwerk und Gäste-WLAN, Dual-WAN-Ausfallsicherung, Reservierungs-/PMS- und Kassensysteme, Einrichtung und Wartung der Endgeräte",
+                  "Einarbeitung in die Grundlagen der deutschen Buchführung: Belegwesen, Kontenrahmen (SKR), Lexware Office, Datenaustausch mit der Steuerkanzlei über DATEV",
+                  "Eigenes Pilotprojekt IT/Buchhaltung: KI-Modelle in der vorbereitenden Buchhaltung (Belegerkennung, Vorkontierung, Dublettenprüfung) zur Reduktion des manuellen Erfassungsaufwands",
+                  "Eigenbetrieb einer mehrteiligen Serverinfrastruktur (VPS, Backup, Monitoring, Wissensdatenbank) als Übungsfeld für Cloud- und Linux-Administration",
+                  "Deutsch: Integrationskurs abgeschlossen, DTZ-Zertifikat B1 (04/2026), Test „Leben in Deutschland“ bestanden; seit 09/2026 Berufssprachkurs B2 (BAMF, 500 UE)",
                 ],
               },
               {
-                role: "Key Account Manager",
-                company: "YUDIKOM",
-                period: "2008 — 2012",
-                location: "Odessa, Ukraine",
+                role: "Systemingenieur",
+                company: "Qwertyshop",
+                period: "01/2012 — 08/2024",
+                location: "Odesa, Ukraine",
                 points: [
-                  "B2B-Vertrieb von IT-Geräten und Dienstleistungen",
-                  "Erstellung von Angeboten und Beschaffung",
-                  "Durchführung von Schulungsseminaren für Kunden",
+                  "Alleinverantwortliche Administration der gesamten IT-Infrastruktur des Unternehmens, inkl. Active Directory, Benutzer- und Rechteverwaltung sowie Backup-Konzepten",
+                  "Technische Betreuung von Firmenkunden vor Ort (Außendienst): Diagnose und Reparatur von Computern, Laptops, Servern, Kassensystemen und Druckern",
+                  "Planung, Installation und Integration von IT-Geräten beim Kunden; Konfiguration von Netzwerken, VPN-Tunneln, IP-Telefonie und Videoüberwachung",
+                  "Sicherer Fernzugriff für Mitarbeiter, Betreuung von Buchhaltungssystemen und Berichtswesen",
+                  "Migration kritischer Systeme in die Cloud; stabiler IT-Betrieb auch unter Kriegsbedingungen",
                 ],
               },
               {
-                role: "Vertriebsleiter",
-                company: "UNITRADE",
-                period: "2002 — 2008",
-                location: "Odessa, Ukraine",
+                role: "Spezialist für Großhandelskunden",
+                company: "YUDIKOM Ltd",
+                period: "01/2008 — 01/2012",
+                location: "Odesa, Ukraine",
                 points: [
-                  "Leitung des Vertriebsteams",
-                  "Personalplanung und Zertifizierungen",
+                  "Akquise und Betreuung von B2B-Kunden, Ausarbeitung von Angeboten",
+                  "Bestellwesen und Einkauf, Vorbereitung und Durchführung von Schulungsseminaren",
                 ],
               },
               {
-                role: "Praktikant / Vertriebs- und Technik-Spezialist",
-                company: "Diaves — nationale Computerfachhandelskette",
-                period: "bis 2002",
-                location: "Kiew / Odessa, Ukraine",
+                role: "Leiter der Verkaufsabteilung",
+                company: "UNITRADE CO., LTD",
+                period: "09/1999 — 01/2008",
+                location: "Ukraine",
                 points: [
-                  "Praktikum nach dem Hochschulabschluss",
-                  "Verkauf und Kundenberatung für Computertechnik",
-                  "Grundlegender technischer Support und PC-Zusammenbau",
+                  "Schulung, Zertifizierung und Personalplanung für Filialpersonal",
+                  "Kontrolle von Verkaufsprozess und Servicequalität, Erstellung von Auswertungen",
                 ],
               },
             ].map((job, i) => (
@@ -170,7 +169,7 @@ export function ClassicResume() {
         {/* ERP / Accounting */}
         <Section title="Warenwirtschaft & Buchhaltungssysteme">
           <p className="mt-2 text-sm text-muted-foreground">
-            Über 15 Jahre Erfahrung mit verschiedenen Buchhaltungs- und Warenwirtschaftssystemen — von der Einrichtung und Konfiguration bis zur Hardware-Integration und Mitarbeiterschulung.
+            Über 15 Jahre Erfahrung mit verschiedenen Buchhaltungs- und Warenwirtschaftssystemen — von der Einrichtung und Konfiguration bis zur Hardware-Integration und Mitarbeiterschulung. In Deutschland: Praxis mit Lexware Office und dem DATEV-Datenaustausch.
           </p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             {[
@@ -178,6 +177,8 @@ export function ClassicResume() {
               { name: "Kassensysteme", desc: "POS-Terminals, Fiskalregister, Integration mit Buchhaltung" },
               { name: "ERP-Integrationen", desc: "Anbindung von Buchhaltungssystemen an Netzwerk, Server und Peripherie" },
               { name: "Datenbank-Backup", desc: "Einrichtung automatischer Backups, Wiederherstellung, Monitoring" },
+              { name: "Lexware Office & DATEV", desc: "Belegwesen, Kontenrahmen (SKR), Datenaustausch mit der Steuerkanzlei" },
+              { name: "KI in der Buchhaltung", desc: "Pilotprojekt: Belegerkennung, Vorkontierung, Dublettenprüfung" },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 60}>
                 <div className="rounded-xl border border-border bg-card p-4 hover:border-blue-500/50 transition-colors">
@@ -193,17 +194,33 @@ export function ClassicResume() {
 
         {/* Skills */}
         <Section title="Technische Kenntnisse">
-          <div className="mt-4 flex flex-wrap gap-2">
-            <span className="rounded-lg border border-blue-500 bg-blue-600/10 px-3 py-1.5 text-sm text-blue-500 font-medium">
-              🤖 KI-Tools (aktiv im Einsatz)
-            </span>
-            {skillsDE.map((skill, i) => (
-              <FadeIn key={skill} delay={(i + 1) * 40}>
-                <span className="rounded-lg border border-border bg-card px-3 py-1.5 text-sm hover:border-blue-500 hover:text-blue-500 transition-colors cursor-default">
-                  {skill}
-                </span>
+          <div className="mt-4 space-y-4">
+            {skillGroupsDE.map((g, i) => (
+              <FadeIn key={g.group} delay={i * 50}>
+                <div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">{g.group}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {g.items.map((skill) => (
+                      <span key={skill} className="rounded-lg border border-border bg-card px-3 py-1.5 text-sm hover:border-blue-500 hover:text-blue-500 transition-colors cursor-default">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </FadeIn>
             ))}
+            <FadeIn delay={skillGroupsDE.length * 50}>
+              <div>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-blue-500">Aktuell in Aneignung (praktische Vertiefung im Eigenbetrieb)</p>
+                <div className="flex flex-wrap gap-2">
+                  {learningDE.map((skill) => (
+                    <span key={skill} className="rounded-lg border border-blue-500 bg-blue-600/10 px-3 py-1.5 text-sm text-blue-500 font-medium">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </Section>
 
@@ -213,10 +230,12 @@ export function ClassicResume() {
         <Section title="Aus- & Weiterbildung">
           <div className="mt-4 space-y-3">
             {[
-              { name: "MTCNA & MTCRE", org: "MikroTik" },
-              { name: "AWS Cloud Essentials", org: "Amazon Web Services" },
-              { name: "DevOps-Kurs", org: "Hillel IT School" },
-              { name: "Docker & Kubernetes", org: "Selbststudium" },
+              { name: "Magisterabschluss Psychologie", org: "Nationale Universität Odesa I. I. Metschnikow · 09/1994 – 06/1999" },
+              { name: "MikroTik Certified Network Associate (MTCNA)", org: "MikroTik" },
+              { name: "MikroTik Certified Routing Engineer (MTCRE)", org: "MikroTik" },
+              { name: "DevOps, 6-monatiger Kurs", org: "Hillel IT School" },
+              { name: "Docker, Kubernetes & OpenShift", org: "Coursera" },
+              { name: "AWS Cloud Technical Essentials", org: "Amazon" },
             ].map((cert, i) => (
               <FadeIn key={i} delay={i * 80}>
                 <div className="rounded-xl border border-border bg-card px-4 py-3 hover:border-blue-500/50 transition-colors">
@@ -236,8 +255,8 @@ export function ClassicResume() {
             {[
               { lang: "Ukrainisch", level: "C2", note: "Muttersprache" },
               { lang: "Russisch", level: "C2", note: "Muttersprache" },
-              { lang: "Deutsch", level: "B1", note: "Zertifikat" },
-              { lang: "Englisch", level: "B1", note: "Fachsprache" },
+              { lang: "Deutsch", level: "B1", note: "DTZ-Zertifikat 04/2026 · seit 09/2026 Kurs mit Ziel B2" },
+              { lang: "Englisch", level: "B1", note: "Mittelstufe" },
             ].map((l, i) => (
               <FadeIn key={i} delay={i * 60}>
                 <div className="rounded-xl border border-border bg-card px-4 py-3 flex items-center justify-between hover:border-blue-500/50 transition-colors">
@@ -262,7 +281,7 @@ export function ClassicResume() {
               Bereit, die Konditionen individuell zu besprechen. Vollzeitstelle, hybrides Arbeiten möglich.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
-              {["Vollzeit", "Hybrid möglich", "Nürnberg / Bayern", "Führerschein Klasse B"].map(tag => (
+              {["Vollzeit", "Hybrid möglich", "Oberbayern · Raum Rosenheim / München", "Umzugs- und reisebereit", "Führerschein Klasse B"].map(tag => (
                 <span key={tag} className="rounded-full bg-blue-600/10 px-3 py-1 text-xs text-blue-500">{tag}</span>
               ))}
             </div>
@@ -305,7 +324,7 @@ export function ClassicResume() {
             Diese Website ist ein stilisierter Lebenslauf. Ich bin offen für eine reguläre Anstellung, einen Arbeitsvertrag und alle üblichen HR-Verfahren.
           </p>
           <p className="text-[11px] text-muted-foreground/35">
-            📍 Suche Festanstellung | IT Support · Systemadministration · Netzwerktechnik · Technischer Support | Nürnberg/Bayern | Vollzeit | Arbeitserlaubnis vorhanden
+            📍 Suche Festanstellung | IT-Administration · IT-Servicetechnik Außendienst · Netzwerktechnik · IT-Support | Oberbayern, Raum Rosenheim / München | Vollzeit | Arbeitserlaubnis vorhanden
           </p>
         </footer>
       </main>
